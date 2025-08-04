@@ -169,7 +169,7 @@ const HourlyForecast = ({ city }) => {
                 const points = hourly.map((h, i) => {
                   const temp = h.main?.temp || 0;
                   const x = (i / (hourly.length - 1)) * 77 + 8;
-                  const y = 80 - ((temp - paddedMin) / paddedRange) * 65;
+                  const y = 85 - ((temp - paddedMin) / paddedRange) * 70 + 8;
                   return { x, y };
                 });
                 if (points.length < 2) return '';
@@ -182,7 +182,7 @@ const HourlyForecast = ({ city }) => {
               })()
             }
             stroke="#ffaa33"
-            strokeWidth="1"
+            strokeWidth="0.8"
             fill="none"
             strokeDasharray="4,3"
             strokeLinecap="round"
@@ -196,20 +196,20 @@ const HourlyForecast = ({ city }) => {
           {hourly.map((h, i) => {
             const temp = h.main?.temp || 0;
             const x = (i / (hourly.length - 1)) * 77 + 8;
-            const y = 80 - ((temp - paddedMin) / paddedRange) * 65;
+            const y = 85 - ((temp - paddedMin) / paddedRange) * 70 + 8;
             return (
               <motion.circle
                 key={i}
                 cx={x}
                 cy={y}
-                r="1.2"
+                r="1"
                 fill="#fff6e4"
                 stroke="#cc7c1c"
-                strokeWidth="0.6"
+                strokeWidth="0.4"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: i * 0.15, duration: 0.4 }}
-                whileHover={{ scale: 1.35, strokeWidth: 1.0 }}
+                whileHover={{ scale: 1.35, strokeWidth: 0.8 }}
               />
             );
           })}
