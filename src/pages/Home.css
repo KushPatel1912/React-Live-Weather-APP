@@ -1,0 +1,32 @@
+.home-page {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background: var(--color-card);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-button.active {
+  background: var(--color-accent);
+  color: white;
+}
+
+.forecast {
+  margin: 20px 0;
+}

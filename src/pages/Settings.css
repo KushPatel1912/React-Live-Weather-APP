@@ -1,0 +1,117 @@
+.settings-page {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 80px;
+}
+
+.weather-header-mini {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.weather-header-mini h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.weather-mini {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.weather-mini .temp {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.weather-mini .condition {
+  font-size: 16px;
+}
+
+.weather-mini .feels {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.settings-section {
+  background: var(--color-card);
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.settings-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.settings-button:last-child {
+  border-bottom: none;
+}
+
+.settings-button .icon {
+  margin-right: 15px;
+  color: var(--color-accent);
+}
+
+.settings-button .arrow {
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--color-muted);
+}
+
+.theme-section {
+  padding: 20px;
+}
+
+.theme-section h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.theme-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.theme-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-button.active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.theme-button .icon {
+  font-size: 18px;
+}

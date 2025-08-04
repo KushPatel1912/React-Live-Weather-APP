@@ -1,0 +1,58 @@
+.weather-header {
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.weather-header.loading,
+.weather-header.error {
+  text-align: center;
+  padding: 40px;
+}
+
+.location h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: 500;
+}
+
+.location .date {
+  margin: 5px 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.current-weather {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.temperature h2 {
+  font-size: 48px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.temperature p {
+  margin: 5px 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.condition {
+  text-align: center;
+}
+
+.condition img {
+  width: 64px;
+  height: 64px;
+}
+
+.condition p {
+  margin: 5px 0;
+  font-size: 16px;
+}

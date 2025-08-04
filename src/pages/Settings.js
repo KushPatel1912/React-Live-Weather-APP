@@ -1,42 +1,81 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../index';
+import { FaUser, FaCog, FaSun, FaMoon } from 'react-icons/fa';
+import { FaSliders } from 'react-icons/fa6';
+import './Settings.css';
 
 const Settings = () => {
   const { theme, setTheme } = useContext(ThemeContext);
+  const cityInfo = {
+    name: 'Bengaluru',
+    country: 'India',
+    temp: 13,
+    weather: 'Thunderstorm',
+    feelsLike: 12
+  };
+
   return (
-    <div style={{ maxWidth: 500, margin: '0 auto', paddingBottom: 80 }}>
-      <div className="card" style={{ textAlign: 'left' }}>
-        <h2 style={{ color: 'var(--color-accent)', marginBottom: 24 }}>Settings</h2>
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ fontWeight: 500, marginBottom: 8 }}>Theme</div>
-          <div style={{ display: 'flex', gap: 16 }}>
-            <button
-              className={`tab-btn${theme === 'light' ? ' active' : ''}`}
-              style={{ minWidth: 100 }}
-              onClick={() => setTheme('light')}
-            >
-              Light Mode
-            </button>
-            <button
-              className={`tab-btn${theme === 'dark' ? ' active' : ''}`}
-              style={{ minWidth: 100 }}
-              onClick={() => setTheme('dark')}
-            >
-              Dark Mode
-            </button>
-          </div>
+    <div className="settings-page">
+      <div className="weather-header-mini">
+        <h1>{cityInfo.name}, {cityInfo.country}</h1>
+        <div className="weather-mini">
+          <span className="temp">{cityInfo.temp}°</span>
+          <span className="condition">{cityInfo.weather}</span>
+          <span className="feels">Feels like {cityInfo.feelsLike}°</span>
         </div>
-        <div style={{ marginBottom: 28 }}>
-          <div style={{ fontWeight: 500, marginBottom: 8 }}>Preferences</div>
-          <div style={{ color: 'var(--color-muted)' }}>
-            (Units, wind speed, etc. — coming soon)
-          </div>
+      </div>
+
+      <div className="settings-section">
+        <button className="settings-button">
+          <FaUser className="icon" />
+          <span>General info</span>
+          <span className="arrow">›</span>
+        </button>
+
+        <button className="settings-button">
+          <FaCog className="icon" />
+          <span>Settings</span>
+          <span className="arrow">›</span>
+        </button>
+
+        <button className="settings-button">
+          <FaSliders className="icon" />
+          <span>Preferences</span>
+          <span className="arrow">›</span>
+        </button>
+      </div>
+
+      <div className="theme-section">
+        <h2>Theme</h2>
+        <div className="theme-buttons">
+          <button 
+            className={`theme-button${theme === 'light' ? ' active' : ''}`}
+            onClick={() => setTheme('light')}
+          >
+            <FaSun className="icon" />
+            <span>Light Mode</span>
+          </button>
+          <button 
+            className={`theme-button${theme === 'dark' ? ' active' : ''}`}
+            onClick={() => setTheme('dark')}
+          >
+            <FaMoon className="icon" />
+            <span>Dark Mode</span>
+          </button>
+        </div>
+      </div>
+
+      <div className="info-section">
+        <div>
+          <h3>Coming Soon</h3>
+          <p className="text-muted">Units, wind speed, and more preferences</p>
         </div>
         <div>
-          <div style={{ fontWeight: 500, marginBottom: 8 }}>General Info</div>
-          <div style={{ color: 'var(--color-muted)' }}>
-            Live Weather App v1.0<br />Powered by OpenWeatherMap & Leaflet
-          </div>
+          <h3>About</h3>
+          <p className="text-muted">
+            Live Weather App v1.0<br />
+            Powered by OpenWeatherMap & Leaflet
+          </p>
         </div>
       </div>
     </div>
