@@ -5,6 +5,7 @@ import './index.css';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { LocationProvider } from './contexts/LocationContext';
 
 export const ThemeContext = createContext();
 
@@ -29,7 +30,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <App />
+      <LocationProvider>
+        <App />
+      </LocationProvider>
     </ThemeProvider>
   </React.StrictMode>
 );
