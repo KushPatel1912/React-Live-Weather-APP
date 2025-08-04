@@ -1,0 +1,70 @@
+.monthly-forecast {
+  padding: 20px;
+  background: var(--color-card);
+  border-radius: 15px;
+  margin: 20px;
+}
+
+.grid-month {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.forecast-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.forecast-day:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.date {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.weekday {
+  display: block;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.day {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.forecast-day img {
+  width: 40px;
+  height: 40px;
+  margin: 5px 0;
+}
+
+.temps {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.high {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.low {
+  color: var(--color-muted);
+}
+
+.forecast.loading,
+.forecast.error {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-muted);
+}

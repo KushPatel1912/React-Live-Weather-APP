@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState, createContext } from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { LocationProvider } from './contexts/LocationContext';
+
+export const ThemeContext = createContext();
+
+const ThemeProvider = ({ children }) => {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('theme') || 'dark';
+  });
+
+  useEffect(() => {
+    document.body.classList.toggle('light-theme', theme === 'light');
+    localStorage.setItem('theme', theme);
+  }, [theme]);
+
+  return (
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider>
+      <LocationProvider>
+        <App />
+      </LocationProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
