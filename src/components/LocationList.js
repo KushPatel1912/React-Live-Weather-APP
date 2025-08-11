@@ -23,7 +23,7 @@ const LocationList = ({ onSelect }) => {
       setLoading(true);
       
       try {
-        const apiKey = process.env.REACT_APP_WEATHER_API_KEY || '0a3cb46c40f15ca7e4d04feafba79a0a';
+        const apiKey = process.env.REACT_APP_WEATHER_API_KEY || 'Enter Your API Key here';
         console.log('Searching for:', query);
         console.log('API Key:', apiKey);
         
